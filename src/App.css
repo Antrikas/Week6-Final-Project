@@ -1,0 +1,15 @@
+
+#landing {
+}
+
+.cinema__image {
+    position:absolute;
+    z-index: -1;
+    width: 100%;
+}
+
+.landing__title{
+padding-top: 58px;
+color:black;
+}
+
