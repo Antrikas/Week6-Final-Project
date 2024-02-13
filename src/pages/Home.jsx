@@ -8,7 +8,7 @@ const Home = () => {
 let navigate = useNavigate();
 function searchMovieAndChangePage (event) {
   event.preventDefault();
-  navigate(`/movies?q=${encodeURIComponent(query)}`);
+  navigate(`/movies?q=${query}`);
 }
 
   return (

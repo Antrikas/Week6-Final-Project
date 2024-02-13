@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, } from 'react'
+import { useLocation } from 'react-router-dom'
 
 
 const  Movies = () => {
 const [moviesArray, setMoviesArray] = useState([])
+const location = useLocation ();
 
 useEffect(() => {
-getMovies()
+const query = location.search.replace("?q=", "");
+console.log (query);
+
+if (query.length > 0) { 
+  searchMovies(query.toLowerCase());
+}
+else {
+  getMovies ();
+}
 }, []) 
 
 useEffect(() => {
@@ -25,10 +35,24 @@ useEffect(() => {
     }
 }
 
+async function searchMovies(query) {
+  try {
+      const response = await fetch(`https://www.omdbapi.com/?apikey=34a5c5d4&s=${query}`);
+      const data = await response.json();
+      console.log (data)
+      setMoviesArray(data.Search)
+      return data.Search || [];
+  } catch (error) {
+      console.error('Error fetching movies:', error);
+      return [];
+  }
+}
+
+
   return (
     <>
-    <section id='Movies'>
-   {Object.keys(moviesArray).length > 0 ? (
+    <section id='movies'>
+   {moviesArray && Object.keys(moviesArray).length > 0 ? (
     moviesArray.map((movie) => (
       <div className="movies" key={movie.imdbID}>
                 <figure className="movies__img--wrapper">
