@@ -13,3 +13,18 @@ padding-top: 58px;
 color:black;
 }
 
+.search-form {
+    position: relative;
+  }
+  
+  .search-form input {
+    padding-right: 40px; /* Adjust as needed */
+  }
+  
+    .search-icon {
+        position: absolute;
+        top: 50%;
+        right: 10px; /* Adjust as needed to position the icon horizontally */
+        transform: translateY(-50%);
+        cursor: pointer;
+  }

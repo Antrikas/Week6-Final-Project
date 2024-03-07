@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import darkCinema  from '../Assets/movie-theater-business.jpg'
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const Home = () => {
   const [query, setQuery] = useState("");
@@ -18,7 +22,7 @@ function searchMovieAndChangePage (event) {
       
     <h1 className='landing__title'>Find a Movie</h1>
 
-    <form onSubmit={(event) => searchMovieAndChangePage(event)}>
+    <form onSubmit={(event) => searchMovieAndChangePage(event)} className="search-form">
 
     <input
     type='text'
@@ -29,9 +33,13 @@ function searchMovieAndChangePage (event) {
     }}
     />
 
-    <button className='' type='submit'>
-    search movie
-    </button>
+<button className='' type='submit'>
+  <FontAwesomeIcon icon={faSearch} 
+  style={{
+  }}
+  onClick={(event) => searchMovieAndChangePage(event)}
+/>
+</button>
     </form>
 
     </section>

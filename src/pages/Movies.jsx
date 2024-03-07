@@ -1,5 +1,6 @@
 import React, { useEffect, useState, } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
+
 
 
 const  Movies = () => {
@@ -52,23 +53,23 @@ async function searchMovies(query) {
   return (
     <>
     <section id='movies'>
-   {moviesArray && Object.keys(moviesArray).length > 0 ? (
-    moviesArray.map((movie) => (
-      <div className="movies" key={movie.imdbID}>
-                <figure className="movies__img--wrapper">
-                    <img className="movies__img" 
-                    src={movie.Poster} alt="">
-                </img>
-                </figure>
-                <div className="movie__title">
+      {moviesArray && moviesArray.length > 0 ? (
+        moviesArray.map((movie) => (
+          <Link to={`/movies/${movie.imdbID}`} key={movie.imdbID} className="movie-link">
+            <div className="movies" key={movie.imdbID}>
+              <figure className="movies__img--wrapper">
+                <img className="movies__img" src={movie.Poster} alt="" />
+              </figure>
+              <div className="movie__title">
                 {movie.Title}
-                </div>
-                <div className="movie__year">
-                    {movie.Year}
-                </div>
+              </div>
+              <div className="movie__year">
+                {movie.Year}
+              </div>
             </div>
-    ))
-   ) : (<h2>loading</h2>) }
+          </Link>
+        ))
+      ) : (<h2>Loading</h2>)}
     </section>
     
     </>
