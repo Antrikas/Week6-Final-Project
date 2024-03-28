@@ -50,30 +50,25 @@ async function searchMovies(query) {
 }
 
 
-  return (
-    <>
-    <section id='movies'>
-      {moviesArray && moviesArray.length > 0 ? (
-        moviesArray.map((movie) => (
-          <Link to={`/movies/${movie.imdbID}`} key={movie.imdbID} className="movie-link">
-            <div className="movies" key={movie.imdbID}>
-              <figure className="movies__img--wrapper">
-                <img className="movies__img" src={movie.Poster} alt="" />
-              </figure>
-              <div className="movie__title">
-                {movie.Title}
-              </div>
-              <div className="movie__year">
-                {movie.Year}
-              </div>
-            </div>
-          </Link>
-        ))
-      ) : (<h2>Loading</h2>)}
-    </section>
-    
-    </>
-  )
-}
+return (
+  <section id='movies' className="movie-container">
+    {moviesArray.length > 0 ? (
+      moviesArray.map((movie) => (
+        <Link to={`/movies/${movie.imdbID}`} key={movie.imdbID} className="movie-link">
+          <div className="movie-card" key={movie.imdbID}>
+            <figure className="movie__img--wrapper">
+              <img className="movie__img" src={movie.Poster} alt="" />
+            </figure>
+            <div className="movie__title">{movie.Title}</div>
+            <div className="movie__year">{movie.Year}</div>
+          </div>
+        </Link>
+      ))
+    ) : (
+      <h2>Loading</h2>
+    )}
+  </section>
+);
+};
 
-export default  Movies
+export default Movies;
