@@ -50,9 +50,9 @@ const MovieInfo = ({}) => {
               
                 <p className="movie__selected--plot">{movie.Plot}</p>
                 <p className="movie__selected--plot"> Director: {movie.Director}</p>
-                <p className="movie__selected--plot">Writer:{movie.Writer}</p>
+                <p className="movie__selected--plot">Writer: {movie.Writer}</p>
                 <p className="movie__selected--plot">Actors: {movie.Actors}</p>
-                <div className="movie__selected--ratings">
+                <div className="movie__selected--ratings"> Ratings:
                   {movie.Ratings && movie.Ratings.map((rating, index) => (
                     <div key={index}>
                       <p><strong>{rating.Source}:</strong> {rating.Value}</p>

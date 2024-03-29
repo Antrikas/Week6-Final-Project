@@ -122,5 +122,49 @@ height: 100%;
 
   #movies__main{
     height: 90vh;
+  }
+  
+  .movie__selected--top {
+    padding: 16px;
+  }
+  .movie__selected--title {
+    color: #fff;
+    padding: 8px;
+    padding-left: 24px;
+  }
 
+  .movie__selected--year {
+    color: #fff;
+    padding: 8px;
+    padding-left: 24px;
+  }
+
+  .movie__selected{
+    display: flex;
+    padding: 28px;
+  }
+
+  .movie__selected--plot {
+    color: #fff;
+    padding: 18px;
+  }
+
+  .movie__selected--ratings {
+    color: #fff;
+    padding: 18px;
+  }
+
+  .movie__link {
+   color: #242424;
+   padding: 12px;
+  }
+
+  button{
+    float: right;
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: lightgray;
+    
   }
