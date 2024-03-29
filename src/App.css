@@ -7,6 +7,7 @@
 
 .nav {
     background-color: #242424;
+    height: 8vh;
 }
 
 .cinema__image {
@@ -67,27 +68,41 @@
   .movie-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+}
+
+.movie-link {
+display: flex;
+width: 33%;
+height: 100%;
 }
 
 .movie-card {
-  width: 60%; /* Set width for each movie card */
-  margin-bottom: 20px; /* Add margin between movie cards */
+    width: calc(25% - 20px); /* Set width for each movie card (4 cards per row) */
+    margin: 0 10px 20px;  /* Add margin between movie cards */
   box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-.movie-card img {
+.movie-card {
     width: 100%;
-    height: auto;
+    height: 100%;
     border-radius: 10px; /* Add border radius to movie images */
   }
 
 .movie__img--wrapper {
-    width: 100%;
+    width: 150px;
     height: 300px; /* Adjust the height as needed */
     overflow: hidden;
     border-radius: 5px; /* Add border radius to movie image wrapper */
   }
+
+.movie__img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
 
 .movie-info {
     padding: 10px;
@@ -101,4 +116,11 @@
   .movie__year {
     color: #fff;
     padding-left: 20px;
+  }
+
+  /*MovieInfo*/
+
+  #movies__main{
+    height: 90vh;
+
   }
